@@ -3,14 +3,6 @@ clear all
 % Load Simulink Parameters Reference
 load ../Config_Set.mat
 
-% Load constants needed for "PlayBack_Data" Simulink
-load ../Calibration_Parameters.mat
-clear Accel_Calib_Offset_Vector
-clear Accel_Calib_Gain_Vector
-clear Gyro_Correction_Roll
-clear Gyro_Correction_Pitch
-clear Gyro_Correction_Yaw
-
 % Load IMU Bus Object
 LibPath = which('AR_Drone_2_Library') ;
 MagicValue = regexp(LibPath,'AR_Drone_2_Library.slx') ;

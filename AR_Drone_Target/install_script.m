@@ -5,18 +5,24 @@ disp('          Please browse to location of Code Sourcery Directory     ')
 disp('===================================================================')
 disp(char(10));
 FolderIsLegit = 0;
+
 while(FolderIsLegit==0)
-folder_name = uigetdir('c:\', 'Select Code Sourcery Directory Location, Look for CodeSourcery\Sourcery_CodeBench_Lite_for_ARM_GNU_Linux\bin');
-ListOfFiles =ls(folder_name);
-
-
-if size(ListOfFiles,2)>=22
-FirstFile = ListOfFiles(3,1:22);
-end
-if  strcmp('arm-none-linux-gnueabi',FirstFile)==1
-    FolderIsLegit = 1;
-end
-
+    FolderName = uigetdir('c:\', 'Select Code Sourcery Directory Location (look for <bin> directory in the Code Sourcery Directory)');
+    ListOfFiles =ls(FolderName);
+    NumFile= 1 ;
+    % This loop will test if an executable file contains <arm-none-linux-gnueabi>
+    while ( (FolderIsLegit==0) && (NumFile<=size(ListOfFiles,1)) )
+        FileName = ListOfFiles(NumFile,:);
+        [pathstr,name,ext] = fileparts([FolderName,'\',FileName]);
+        % Tests if the file extension is .exe
+        if ( strcmp('.exe',ext) || strcmp('.exe ',ext) )
+            % Tests if the file contains <arm-none-linux-gnueabi>
+            if  strcmp('arm-none-linux-gnueabi',name(1:22))
+                FolderIsLegit = 1;
+            end
+        end
+        NumFile = NumFile + 1;
+    end
 end
 
 
@@ -27,7 +33,7 @@ disp('                  \AR_Drone\registry\thirdpartytools                      
 disp('===============================================================================')
 disp(char(10));
 
-PassFail = RegisterThirdPartyCompilerXML(folder_name);
+PassFail = RegisterThirdPartyCompilerXML(FolderName);
 
 
 if PassFail==1
@@ -44,10 +50,3 @@ addpath([pwd]);
 addpath([pwd '\blocks']);
 addpath([pwd '\registry']);
 savepath
-% save_path
-% 
-% addpath([pwd]);
-% addpath([pwd '\blocks']);
-% addpath([pwd '\registry']);
-% savepath
-

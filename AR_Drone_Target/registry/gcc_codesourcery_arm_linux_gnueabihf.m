@@ -24,6 +24,7 @@ tc.Platform = platform;
 tc.setBuilderApplication(platform);
 
 % MATLAB setup
+% = MATLAB commands or scripts to perform setup routines specific to this toolchain.
 tc.MATLABSetup = 'codertarget.arm_cortex_a_drone.internal.my_function();';  %DAREN: roth package related?
                                                                           %DAREN, will comment out to see the effect
 

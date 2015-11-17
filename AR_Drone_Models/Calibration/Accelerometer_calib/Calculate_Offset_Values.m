@@ -14,5 +14,5 @@ Z_down_data = 1.069 ;
 all_up_data = [X_up_data Y_up_data Z_up_data] ;
 all_down_data = [X_down_data Y_down_data Z_down_data] ;
 
-Accel_Calib_Offset_Vector = 0.5*(all_up_data + all_down_data) ; % find the center of the 2 data
-Accel_Calib_Gain_Vector = 0.5*(all_up_data - all_down_data) ; % find the gain which normalizes data to 1 or -1
+Accel_Calib_Offset_Vector = 0.5*(all_up_data + all_down_data) % find the center of the 2 data
+Accel_Calib_Gain_Vector = 0.5*(all_up_data - all_down_data) % find the gain which normalizes data to 1 or -1

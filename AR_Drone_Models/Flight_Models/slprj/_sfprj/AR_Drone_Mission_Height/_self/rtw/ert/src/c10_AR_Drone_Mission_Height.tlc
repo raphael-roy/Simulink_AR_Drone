@@ -1,0 +1,66 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   8 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "is_active_c10_AR_Drone_Mission_Height"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "is_Algorithm_Choice"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Algorithm_Choice"\
+    }\
+    ChartData {\
+      Name         "is_active_Algorithm_Choice"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         "Algorithm_Choice"\
+    }\
+    ChartData {\
+      Name         "is_Flight_Mission"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Algorithm_Choice.Flight_Mission"\
+    }\
+    ChartData {\
+      Name         "is_Launch_Mission"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "Launch_Mission"\
+    }\
+    ChartData {\
+      Name         "is_active_Launch_Mission"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         "Launch_Mission"\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i1"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i2"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

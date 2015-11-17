@@ -5,11 +5,9 @@ load ../Config_Set.mat
 
 % Load constants needed for "PlayBack_Data" Simulink
 load ../Calibration_Parameters.mat
-clear Mag_Calib_Offset_Vector
-clear Mag_Calib_Gain_Vector
-clear Gyro_Correction_Roll
-clear Gyro_Correction_Pitch
-clear Gyro_Correction_Yaw
+clear Accelerometer_quick_calibration
+clear Gyrometer_quick_calibration
+clear Magnetometer_calibration
 
 % Load IMU Bus Object
 LibPath = which('AR_Drone_2_Library') ;

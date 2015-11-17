@@ -1,0 +1,379 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   57 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "sfEvent"\
+      Description  "ActiveChartEvent"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "isStable"\
+      Description  "IsstableBool"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "is_active_c12_AR_Drone_Flight_Control"\
+      Description  "StateIsActive"\
+      SFName       "is_active_c12_AR_Drone_Flight_Control"\
+      Path         "is_active_c12_AR_Drone_Flight_Control"\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_active_Fault_Check"\
+      Description  "StateIsActive"\
+      SFName       "is_active_Fault_Check"\
+      Path         "Fault_Check.is_active_Fault_Check"\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_active_BatteryFault_Check"\
+      Description  "StateIsActive"\
+      SFName       "is_active_BatteryFault_Check"\
+      Path         "Fault_Check.BatteryFault_Check.is_active_BatteryFault_Check"\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_BatteryNominal"\
+      Description  "StateActiveChild"\
+      SFName       "is_BatteryNominal"\
+      Path         "Fault_Check.BatteryFault_Check.BatteryNominal.is_BatteryNominal"\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_BatteryLow"\
+      Description  "StateActiveChild"\
+      SFName       "is_BatteryLow"\
+      Path         "Fault_Check.BatteryFault_Check.BatteryLow.is_BatteryLow"\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_active_UltraSoundwarning_Check"\
+      Description  "StateIsActive"\
+      SFName       "is_active_UltraSoundwarning_Check"\
+      Path         "Fault_Check.UltraSoundwarning_Check.is_active_UltraSoundwarning_Check"\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_active_SafeOrientation_Check"\
+      Description  "StateIsActive"\
+      SFName       "is_active_SafeOrientation_Check"\
+      Path         "Fault_Check.SafeOrientation_Check.is_active_SafeOrientation_Check"\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_GravityVectorCheck"\
+      Description  "StateActiveChild"\
+      SFName       "is_GravityVectorCheck"\
+      Path         "Fault_Check.SafeOrientation_Check.GravityVectorCheck.is_GravityVectorCheck"\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_active_Drone_State"\
+      Description  "StateIsActive"\
+      SFName       "is_active_Drone_State"\
+      Path         "Drone_State.is_active_Drone_State"\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_WaitForHost"\
+      Description  "StateActiveChild"\
+      SFName       "is_WaitForHost"\
+      Path         "Drone_State.WaitForHost.is_WaitForHost"\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_Controlled_Flight"\
+      Description  "StateActiveChild"\
+      SFName       "is_Controlled_Flight"\
+      Path         "Drone_State.Controlled_Flight.is_Controlled_Flight"\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_Landing_Sequence"\
+      Description  "StateActiveChild"\
+      SFName       "is_Landing_Sequence"\
+      Path         "Drone_State.Landing_Sequence.is_Landing_Sequence"\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_active_Flight_Controls"\
+      Description  "StateIsActive"\
+      SFName       "is_active_Flight_Controls"\
+      Path         "Flight_Controls.is_active_Flight_Controls"\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_active_Attitude_Command"\
+      Description  "StateIsActive"\
+      SFName       "is_active_Attitude_Command"\
+      Path         "Flight_Controls.Attitude_Command.is_active_Attitude_Command"\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_active_Altitude_Command"\
+      Description  "StateIsActive"\
+      SFName       "is_active_Altitude_Command"\
+      Path         "Flight_Controls.Altitude_Command.is_active_Altitude_Command"\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "is_active_MotorMixing_Command"\
+      Description  "StateIsActive"\
+      SFName       "is_active_MotorMixing_Command"\
+      Path         "Flight_Controls.MotorMixing_Command.is_active_MotorMixing_Command"\
+      IsTestPoint  1\
+    }\
+    ChartData {\
+      Name         "initDone"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "initDone"\
+    }\
+    ChartData {\
+      Name         "throttle"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "throttle"\
+    }\
+    ChartData {\
+      Name         "deltaThrottle"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "deltaThrottle"\
+    }\
+    ChartData {\
+      Name         "height"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "height"\
+    }\
+    ChartData {\
+      Name         "hoverHeight"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "hoverHeight"\
+    }\
+    ChartData {\
+      Name         "Attitude_Thrust"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Attitude_Thrust"\
+      Dimensions   [3]\
+    }\
+    ChartData {\
+      Name         "Altitude_Thrust"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Altitude_Thrust"\
+    }\
+    ChartData {\
+      Name         "Converge_Flag"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Converge_Flag"\
+    }\
+    ChartData {\
+      Name         "reset_offset_calc"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "reset_offset_calc"\
+    }\
+    ChartData {\
+      Name         "MotorArmed"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "MotorArmed"\
+    }\
+    ChartData {\
+      Name         "LandingPhase"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "LandingPhase"\
+    }\
+    ChartData {\
+      Name         "N"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "N"\
+    }\
+    ChartData {\
+      Name         "Offset_Gyro_Current"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Offset_Gyro_Current"\
+      Dimensions   [3]\
+    }\
+    ChartData {\
+      Name         "Offset_Value_Current"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Offset_Value_Current"\
+    }\
+    ChartData {\
+      Name         "Offset_Accel_Current"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Offset_Accel_Current"\
+      Dimensions   [3]\
+    }\
+    ChartData {\
+      Name         "BatteryFault"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "BatteryFault"\
+    }\
+    ChartData {\
+      Name         "OrientationFault"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "OrientationFault"\
+    }\
+    ChartData {\
+      Name         "Move"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Move"\
+    }\
+    ChartData {\
+      Name         "Landing_Altitude"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Landing_Altitude"\
+    }\
+    ChartData {\
+      Name         "Actual_Attitude"\
+      Description  "ChartLocal"\
+      SFName       ""\
+      Path         "Actual_Attitude"\
+    }\
+    ChartData {\
+      Name         "A_x_sum"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "A_x_sum_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "A_y_sum"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "A_y_sum_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "A_z_sum"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "A_z_sum_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "Tick"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "Tick_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "G_x_sum"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "G_x_sum_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "G_y_sum"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "G_y_sum_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "G_z_sum"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "G_z_sum_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "Tick"\
+      Description  "EmlPersistent"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "Tick_not_empty"\
+      Description  "EmlPersistentSentinel"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i1"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i2"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i3"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction

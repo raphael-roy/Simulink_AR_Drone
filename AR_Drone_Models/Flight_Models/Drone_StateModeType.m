@@ -6,10 +6,9 @@ classdef Drone_StateModeType < Simulink.IntEnumType
     enumeration
         None(0),
         WaitForHost(1),
-		Initialize(2),
-		Controlled_Flight(3),
-		Landing_Sequence(4)
-        Landing_Terminate(5)
+		Controlled_Flight(2),
+		Landing_Sequence(3)
+        Landing_Terminate(4)
     end
 
     methods (Static)

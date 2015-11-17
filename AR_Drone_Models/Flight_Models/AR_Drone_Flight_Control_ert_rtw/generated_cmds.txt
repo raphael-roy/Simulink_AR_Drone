@@ -1,0 +1,1 @@
+cd update;chmod 777 AR_Drone_Flight_Control.elf;./AR_Drone_Flight_Control.elf -w
